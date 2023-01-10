@@ -7,7 +7,8 @@ import org.example.basic.Singer;
 public class IdolDancer extends Dancer
         implements Singer, Rapper {
 
-    private  int numberOfFan; //팬의 수
+    private int numberOfFan; // 팬의 수
+
 
 
     // 생성자를 하나도 선언하지 않으면 기본 생성자가 자동으로 만들어집니다.
@@ -21,7 +22,7 @@ public class IdolDancer extends Dancer
     //부모의 메서드 시그니처( 이름, 리턴타입,파라미터)를 똑같이 맞춰야한다.
 
     @Override
-    public void Dance(){
+    public void dance(){
         wink();
     }
     private void wink(){

@@ -1,7 +1,5 @@
 package org.example.basic;
 
-
-import static java.lang.System.*;
 import static org.example.basic.DanceLevel.*;
 
 public abstract class Dancer extends Object {             //extends를 안 붙이면 자동으로 Object 클래스가 붙는다. (자바 제일 상단 클래스:object)
@@ -29,22 +27,22 @@ public abstract class Dancer extends Object {             //extends를 안 붙�
     public Dancer(String crewName, String myName){
         this.crewName = crewName;
         this.myName=myName;
-        out.println("그냥 dancer 생성됨!");
+        System.out.println("그냥 dancer 생성됨!");
     }
 
 
     // 스트레칭
     private void stretch(){
-        out.println(myName+"님이 스트레칭합니다.");
+        System.out.println(myName+"님이 스트레칭합니다.");
         this.stretch=true;
     }
     //다리찢기
     private void makeFlexible(){
         if(!stretch){
-            out.println("스트레칭 안해서 죽었습니다");
+            System.out.println("스트레칭 안해서 죽었습니다");
             return;
         }
-        out.println(myName+"님이 유연성 운동을 합니다.");
+        System.out.println(myName+"님이 유연성 운동을 합니다.");
         this.flexible=true;
     }
 
