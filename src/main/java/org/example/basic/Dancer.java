@@ -1,12 +1,15 @@
 package org.example.basic;
 
 
+import org.example.inherit.IdolDancer;
+
 import static java.lang.Math.*;
 import static java.lang.System.*;
 import static org.example.basic.DanceLevel.*;
 
-public class Dancer {
-    
+public class Dancer extends Object { //extends를 안 붙이면 자동으로 Object 클래스가 붙는다. (자바 제일 상단 클래스:object)
+
+
     private final String crewName; //팀의 이름 . final필수, dancer로 태어나면 불변값.
     private final String myName; // 내 이름
 
@@ -18,10 +21,16 @@ public class Dancer {
     //유연성 운동 했는지
     private  boolean flexible;
 
+    public Dancer(){
+        this("기본크루","이름없음");
+//        this.crewName="기본크루";
+//        this.myName="이름없음";
+    }
     //생성자 : 객체가 처음 생성될때 호출되는 메서드
     public Dancer(String crewName, String myName){
         this.crewName = crewName;
         this.myName=myName;
+        out.println("그냥 dancer 생성됨!");
 
         random(); //import 로 설정시 math.random() 안해도 됨. (alt +enter 누르면 됨)
         ceil(1.1 * PI);
