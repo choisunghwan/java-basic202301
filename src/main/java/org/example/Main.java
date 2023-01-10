@@ -3,9 +3,7 @@ package org.example;
 import org.example.basic.Dancer;
 import org.example.inherit.IdolDancer;
 import org.example.inherit.StreetDancer;
-import org.example.pcly.PerformanceTeam;
-
-import java.util.*;
+import org.example.poly.PerformanceTeam;
 
 public class Main {
     public static void main(String[] args) {

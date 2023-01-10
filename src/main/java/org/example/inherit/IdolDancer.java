@@ -20,9 +20,8 @@ public class IdolDancer extends Dancer
     //오버라이딩 : 부모의 매서드를 재정의한다.
     //부모의 메서드 시그니처( 이름, 리턴타입,파라미터)를 똑같이 맞춰야한다.
 
-//    @Override
-    public void idolDance(){
-        super.dance();
+    @Override
+    public void Dance(){
         wink();
     }
     private void wink(){

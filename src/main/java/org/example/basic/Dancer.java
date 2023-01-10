@@ -1,9 +1,6 @@
 package org.example.basic;
 
 
-import org.example.inherit.IdolDancer;
-
-import static java.lang.Math.*;
 import static java.lang.System.*;
 import static org.example.basic.DanceLevel.*;
 
@@ -33,10 +30,6 @@ public abstract class Dancer extends Object {             //extends를 안 붙�
         this.crewName = crewName;
         this.myName=myName;
         out.println("그냥 dancer 생성됨!");
-
-        random(); //import 로 설정시 math.random() 안해도 됨. (alt +enter 누르면 됨)
-        ceil(1.1 * PI);
-        out.println(); //sout 단축키 + import 로 인해 System.을 때도 됨.
     }
 
 
@@ -56,17 +49,15 @@ public abstract class Dancer extends Object {             //extends를 안 붙�
     }
 
     //춤추기
-    public void dance(){
+    public abstract void dance();
 
-        stretch();
-        makeFlexible();
 
-        if(!flexible){
-            out.println("유연성 운동 안해서 죽었습니다.");
-            return;
-        }
-        out.println(myName+"님이 충을 춥니다");
+    public String getCrewName() {
+        return crewName;
     }
 
+    public String getMyName() {
+        return myName;
+    }
 
 }
