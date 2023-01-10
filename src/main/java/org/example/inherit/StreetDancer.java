@@ -12,7 +12,7 @@ public class StreetDancer extends Dancer
     }
 
 //    @Override
-    public void Dance(){
+    public void dance(){
         System.out.println("비보잉을 합니다");
     }
 
