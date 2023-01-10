@@ -7,7 +7,7 @@ import static java.lang.Math.*;
 import static java.lang.System.*;
 import static org.example.basic.DanceLevel.*;
 
-public class Dancer extends Object { //extends를 안 붙이면 자동으로 Object 클래스가 붙는다. (자바 제일 상단 클래스:object)
+public abstract class Dancer extends Object {             //extends를 안 붙이면 자동으로 Object 클래스가 붙는다. (자바 제일 상단 클래스:object)
 
 
     private final String crewName; //팀의 이름 . final필수, dancer로 태어나면 불변값.
@@ -26,6 +26,8 @@ public class Dancer extends Object { //extends를 안 붙이면 자동으로 Obj
 //        this.crewName="기본크루";
 //        this.myName="이름없음";
     }
+
+
     //생성자 : 객체가 처음 생성될때 호출되는 메서드
     public Dancer(String crewName, String myName){
         this.crewName = crewName;
@@ -65,4 +67,6 @@ public class Dancer extends Object { //extends를 안 붙이면 자동으로 Obj
         }
         out.println(myName+"님이 충을 춥니다");
     }
+
+
 }
