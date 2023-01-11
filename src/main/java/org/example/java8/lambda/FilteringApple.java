@@ -86,5 +86,14 @@ public class FilteringApple {
         * => 모든 사과가 빨강색으로 변해야한다.
         * */
 
+
+    public static <T, R> List<R> map(List<T> list, GenericFunction<T, R> mapper) {
+        List<R> result = new ArrayList<>();
+        for (T t : list) {
+            R r = mapper.apply(t);
+            result.add(r);
+        }
+        return result;
     }
+}
 

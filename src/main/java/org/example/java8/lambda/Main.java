@@ -1,9 +1,13 @@
 package org.example.java8.lambda;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.util.List;
 
-import static org.example.java8.lambda.Color.GREEN;
-import static org.example.java8.lambda.Color.RED;
+import static org.example.java8.lambda.Color.*;
 import static org.example.java8.lambda.FilteringApple.*;
 
 public class Main {
@@ -26,8 +30,8 @@ public class Main {
                 ,new Apple(97, RED)
                 ,new Apple(200,Color.GREEN)
                 ,new Apple(50, RED)
-                ,new Apple(85,Color.YELLOW)
-                ,new Apple(75,Color.YELLOW)
+                ,new Apple(85, YELLOW)
+                ,new Apple(75, YELLOW)
 
         );
 
@@ -91,8 +95,52 @@ public class Main {
         List<Integer> numbers = List.of(
                 1,2,3,4,5,6,7,8,9,10
         );
-        //짝수만 필터리
+        //짝수만 필터링
         List<Integer> evenNumbers = filter(numbers,n->n%2 ==0);
         System.out.println(evenNumbers);
+
+        System.out.println("=============색상만 추출===============");
+
+        //사과 리스트에서 사과의 색상만 추출하여 새로운 색상리스트를 반환
+//        List<Color> colorList = map(appleList, new GenericFunction<Apple, Color>() {
+//            @Override
+//            public Color apply(Apple apple) {
+//                return apple.getColor();
+//            }
+//        });
+        List<Color> colorList = map(appleList,apple -> apple.getColor());
+        System.out.println("colorList = " + colorList);
+
+        List<Integer> weightList = map(appleList,a -> a.getWeight());
+        System.out.println("weightList = " + weightList);
+
+        List<AppleInfo> appleInfos
+                = map(appleList, a -> new AppleInfo(a.getColor(), a.getWeight()));
+
+        System.out.println("appleInfos = " + appleInfos);
+
+        // 전체 사과색변경
+        List<Apple> yellows = map(appleList, a -> {
+            a.setColor(YELLOW);
+            return a;
+        });
+        for (Apple yellow : yellows) {
+            System.out.println(yellow);
+        }
     }
+
+
+    // 사과에서 필요한 데이터 몇개만 추출
+    @Getter @NoArgsConstructor
+    @ToString @AllArgsConstructor
+    public static class AppleInfo{
+        private Color color;
+        private int weight;
+    }
+
+//    public AppleInfo(Apple a){
+//        this.color = a.getColor();
+//        this.weight = a.getWeight();
+//    }
+
 }
